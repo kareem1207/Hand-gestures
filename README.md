@@ -44,6 +44,8 @@ The use of Pyautogui library in this code is used to perform operations like cli
 ## Output
 
 This is the output of the code (sorry not suited in better environment) :
+[![output](output.png)](output.mp4)
+
 
 
 ## Gestures table
