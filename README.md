@@ -7,6 +7,16 @@ This is code is used for controlling laptop developed using python.
 ## Description
 
 The file named "main.py" is the code which runs captures the video and the gestures of done by the user which is fingers count. This code have a lot of dependencies as we are using modules for detecting the gestures.
+## Installation and Usage
+
+### Clone the Repository
+
+git clone <repository-url>
+cd <repository-folder>
+### Install dependecies
+pip install opencv-python mediapipe pyautogui
+### Run the Script
+python main.py
 
 ### Opencv
 
