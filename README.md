@@ -41,20 +41,30 @@ in this code we are detecting the code based on the confidence levels of the com
 
 The use of Pyautogui library in this code is used to perform operations like clicking a certain key board button
 
+### About Zero‑DCE (night mode)
+
+- Zero‑DCE (Zero‑Reference Deep Curve Estimation) enhances low‑light frames in real time.
+- The app loads a Keras model from `ZERO_DCE_MODEL_PATH` (env var) or `zero_dce.keras` in the project root.
+- If a model isn’t present, the app still runs but without enhancement.
+
 ## Tech stack
 
-- python
+- Python 3.10 (recommended) or 3.11
+- OpenCV, MediaPipe, PyAutoGUI, NumPy
+- TensorFlow/Keras for Zero‑DCE (night mode)
 
 ## Requirements
 
-- python version 3.12.7 or below
-- a good code editor like vs code , anaconda , etc..
-- modules like opencv , mediapipe , pyautogui
+- Python 3.10–3.11
+- A code editor like VS Code, Anaconda Navigator, etc.
+- Packages: opencv‑python, mediapipe, pyautogui, numpy, tensorflow
+- TensorFlow powers the Zero‑DCE low‑light enhancement used for “night mode”.
 
 ## Features
 
-- controlling laptop using finger gestures
-- customization
+- Control laptop using finger gestures
+- Night mode: Zero‑DCE low‑light enhancement for low‑light scenes
+- Customization (adjust key mappings and thresholds)
 
 ## Output
 
@@ -68,14 +78,18 @@ This is the output of the code (sorry not suited in better environment) :
 | :---: | :------: |
 |   1   |   left   |
 |   2   |  right   |
-|   3   |   down   |
-|   4   |    up    |
+|   3   |    up    |
+|   4   |   down   |
 |   5   |  space   |
 
 > [!Note]
-> Please always check for the version as opencv , mediapipe and pyautogui is not at all integrated to python version 3.13
+> Use Python 3.10 or 3.11 for best compatibility. OpenCV, MediaPipe, and PyAutoGUI may not have stable wheels for Python 3.12/3.13 on Windows yet.
 
 > [!Tip]
-> It is suggested to check for the requirements by using bellow command
-> pip install opencv mediapipe pyautogui or
-> pip install opencv , pip install mediapipe, pip install pyautogui don't run at a time
+> Install dependencies via the provided requirements file:
+> `pip install -r requirements.txt`
+>
+> Or individually:
+> `pip install opencv-python mediapipe pyautogui numpy tensorflow`
+>
+> To use night mode, provide a model file at `zero_dce.keras` or set `ZERO_DCE_MODEL_PATH` to your model path.

@@ -2,9 +2,11 @@ from typing import Any
 import cv2
 import mediapipe as mpipe
 from time import time
+import numpy as np
 
 from Actions import Action
 from HandDetection import HandDetector
+from zero_dce import enhance_low_light_with_zero_dce
 
 
 def main() -> None:
@@ -30,13 +32,15 @@ def main() -> None:
 
     try:
         while True:
-            ret, frame = cap.read()
+            ret , frame  = cap.read()
             if not ret:
                 print("Warning: Frame grab failed; exiting loop.")
                 break
 
-            frame : Any = cv2.flip(frame, 1)
-            rgb_frame : Any = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            enhanced_frame : np.ndarray = enhance_low_light_with_zero_dce(frame)
+
+            frame : np.ndarray = cv2.flip(enhanced_frame, 1)
+            rgb_frame : np.ndarray = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             results : Any = hand_obj.process(rgb_frame)
 
             if results.multi_hand_landmarks:

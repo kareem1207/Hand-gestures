@@ -1,1 +1,43 @@
+# Python
 __pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dll
+*.dylib
+
+# Virtual environments
+.env/
+.venv/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models & large data
+*.h5
+*.hdf5
+*.keras
+saved_model/
+checkpoints/
+*.tflite
+*.onnx
+zero_dce.keras
+
+# Media outputs
+*.mp4
+*.png
+*.jpg__pycache__/
